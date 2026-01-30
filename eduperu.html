@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>EDU PERÚ IA</title>
+<style>
+body{font-family:Arial;background:#0b1c2d;color:white;text-align:center;padding:20px;}
+h1{color:#00e0ff;}
+button{padding:12px 20px;font-size:18px;border:none;border-radius:10px;background:#00e0ff;color:#000;cursor:pointer;}
+</style>
+</head>
+<body>
+
+<h1>EDU PERÚ IA</h1>
+<p>Aprender sin límites</p>
+
+<button onclick="descargar()">Crear PPT</button>
+
+<script>
+function descargar(){
+ const texto = `
+ EDU PERÚ IA
+ Aprender sin límites
+ Tema: Matemática
+ `;
+ const blob = new Blob([texto],{type:"application/vnd.ms-powerpoint"});
+ const a = document.createElement("a");
+ a.href = URL.createObjectURL(blob);
+ a.download="EDU-PERU-IA.ppt";
+ a.click();
+}
+</script>
+
+</body>
+</html>
